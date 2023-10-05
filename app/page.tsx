@@ -1,3 +1,7 @@
 export default function Home() {
-  return <main>Hello </main>;
+  return (
+    <div className="flex justify-center items-center p-40 w-full h-full ">
+      <div className="container ">Products</div>
+    </div>
+  );
 }
