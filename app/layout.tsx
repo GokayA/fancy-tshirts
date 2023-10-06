@@ -2,7 +2,7 @@ import Navbar from '@/components/Navbar';
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-
+import { CartProvider } from 'use-shopping-cart';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -18,8 +18,15 @@ export default function RootLayout({
   return (
     <html lang="en" className="min-h-screen">
       <body className={inter.className}>
-        <Navbar />
-        {children}
+        <CartProvider
+          stripe={process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY!}
+          currency="USD"
+          shouldPersist
+          cartMode="checkout-session"
+        >
+          <Navbar />
+          {children}
+        </CartProvider>
       </body>
     </html>
   );

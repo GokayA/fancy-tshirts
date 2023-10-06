@@ -1,6 +1,10 @@
+'use client';
+import { shimmer, toBase64 } from '@/lib/image';
+import { urlForImage } from '@/sanity/lib/image';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
+import { formatCurrencyString } from 'use-shopping-cart';
 
 interface ProductCardProps {
   product: {
@@ -26,8 +30,13 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
         >
           <p className="">{product.name}</p>
           <div className="relative w-40 h-40 ">
+            {/* urlforimage by sanity product.image[0].url */}
             <Image
-              src={product.images}
+              placeholder="blur"
+              blurDataURL={`data:image/svg+xml;base64,${toBase64(
+                shimmer(225, 280)
+              )}`}
+              src={urlForImage(product.images[0].url)}
               alt={product.name}
               fill
               className="object-contain bg-white"
@@ -35,7 +44,10 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
             />
           </div>
           <p>
-            {product.price / 100}$ {product.currency}
+            {formatCurrencyString({
+              value: product.price,
+              currency: product.currency,
+            })}
           </p>
           <button className="bg-red-500">Add to cart</button>
         </div>
