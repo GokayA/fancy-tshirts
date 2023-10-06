@@ -1,6 +1,7 @@
+import ProductImage from '@/components/ProductImage';
+import ProductInfo from '@/components/ProductInfo';
 import { client } from '@/sanity/lib/client';
 import { groq } from 'next-sanity';
-import Image from 'next/image';
 import { FC } from 'react';
 
 interface pageProps {
@@ -31,11 +32,9 @@ const page: FC<pageProps> = async ({ params }) => {
   console.log(product.images[0]);
 
   return (
-    <div>
-      <div>
-        <Image src={product.images[0]} alt={product.name} />
-      </div>
-      <div>sag</div>
+    <div className="flex px-40 py-20 gap-20">
+      <ProductImage product={product} />
+      <ProductInfo product={product} />
     </div>
   );
 };

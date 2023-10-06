@@ -1,26 +1,18 @@
 'use client';
+import { SanityProduct } from '@/lib/SanityProductType/product-type';
 import { shimmer, toBase64 } from '@/lib/image';
 import { urlForImage } from '@/sanity/lib/image';
+import { ImageUrlBuilderOptionsWithAsset } from '@sanity/image-url/lib/types/types';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
 import { formatCurrencyString } from 'use-shopping-cart';
 
 interface ProductCardProps {
-  product: {
-    _id: string;
-    _createdAt: string;
-    name: string;
-    sku: string;
-    images: string;
-    currency: string;
-    price: number;
-    description: string;
-    slug: string;
-  };
+  product: SanityProduct;
 }
 
-const ProductCard: FC<ProductCardProps> = ({ product }) => {
+const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <Link href={`/products/${product.slug}`} className="">
       <div className="flex items-center p-10 gap-2">
@@ -30,13 +22,12 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
         >
           <p className="">{product.name}</p>
           <div className="relative w-40 h-40 ">
-            {/* urlforimage by sanity product.image[0].url */}
             <Image
               placeholder="blur"
               blurDataURL={`data:image/svg+xml;base64,${toBase64(
                 shimmer(225, 280)
               )}`}
-              src={urlForImage(product.images[0].url)}
+              src={urlForImage(product.images[0]).url()}
               alt={product.name}
               fill
               className="object-contain bg-white"

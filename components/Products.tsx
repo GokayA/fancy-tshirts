@@ -1,18 +1,10 @@
+import { SanityProduct } from '@/lib/SanityProductType/product-type';
 import ProductCard from './ProductCard';
 
 interface ProductProps {
-  products: {
-    _id: string;
-    _createdAt: string;
-    name: string;
-    sku: string;
-    images: string;
-    currency: string;
-    price: number;
-    description: string;
-    slug: string;
-  }[];
+  products: SanityProduct[];
 }
+
 const Products = ({ products }: ProductProps) => {
   return (
     <div className="flex flex-col p-40 w-full h-full ">
