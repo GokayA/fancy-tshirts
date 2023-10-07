@@ -10,7 +10,7 @@ interface ProductInfoProps {
 
 const ProductInfo: FC<ProductInfoProps> = ({ product }) => {
   const [size, setSize] = useState();
-
+  // BURDAN DEVAM
   return (
     <div className="flex ">
       <div className="flex flex-col jusify-center gap-4">
