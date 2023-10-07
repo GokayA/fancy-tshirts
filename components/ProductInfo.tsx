@@ -1,7 +1,7 @@
 'use client';
 import { SanityProduct } from '@/lib/SanityProductType/product-type';
 
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { formatCurrencyString } from 'use-shopping-cart';
 
 interface ProductInfoProps {
@@ -9,6 +9,8 @@ interface ProductInfoProps {
 }
 
 const ProductInfo: FC<ProductInfoProps> = ({ product }) => {
+  const [size, setSize] = useState();
+
   return (
     <div className="flex ">
       <div className="flex flex-col jusify-center gap-4">
