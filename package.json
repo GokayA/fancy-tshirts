@@ -9,9 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-toast": "^1.1.5",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.17.0",
     "@stripe/stripe-js": "^2.1.7",
+    "add": "^2.0.6",
+    "button": "^1.1.1",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "lucide-react": "^0.284.0",
     "next": "latest",
     "next-sanity": "^5.5.4",
     "react": "latest",
@@ -19,6 +26,8 @@
     "react-icons": "^4.11.0",
     "sanity": "^3.17.0",
     "styled-components": "5.2",
+    "tailwind-merge": "^1.14.0",
+    "tailwindcss-animate": "^1.0.7",
     "use-shopping-cart": "^3.1.8"
   },
   "devDependencies": {
