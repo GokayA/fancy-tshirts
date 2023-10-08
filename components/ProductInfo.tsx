@@ -12,7 +12,7 @@ interface ProductInfoProps {
 
 const ProductInfo: FC<ProductInfoProps> = ({ product }) => {
   const [selectedSize, setSelectedSize] = useState(product.sizes[0]);
-  const { addItem, cartDetails, incrementItem } = useShoppingCart();
+  const { addItem, cartDetails, incrementItem, clearCart } = useShoppingCart();
   const { toast } = useToast();
   const isExist = !!cartDetails?.[product._id];
 
@@ -23,6 +23,7 @@ const ProductInfo: FC<ProductInfoProps> = ({ product }) => {
         size: selectedSize,
       },
     };
+
     isExist ? incrementItem(item._id) : addItem(item);
     toast({
       title: `${item.name} (${selectedSize})`,
@@ -50,22 +51,22 @@ const ProductInfo: FC<ProductInfoProps> = ({ product }) => {
         <p>{product.description}</p>
         <div className="flex gap-2">
           {product.sizes.map((size) => (
-            <div key={size}>
-              <Button
-                variant={selectedSize === size ? 'default' : 'outline'}
-                onClick={() => setSelectedSize(size)}
-                className="p-2 cursor-pointer border-[1px] capitalize border-blue-500"
-              >
-                {size}
-              </Button>
-            </div>
+            <Button
+              key={size}
+              variant={selectedSize === size ? 'default' : 'outline'}
+              onClick={() => setSelectedSize(size)}
+              className="p-2 cursor-pointer  border-[1px] capitalize border-blue-500"
+            >
+              {size}
+            </Button>
           ))}
         </div>
         {/* <p>{product.colors}</p> */}
         <div className="w-full">
           <Button
+            variant="default"
             onClick={() => addToCart()}
-            className="w-full h-10 bg-purple-500 text-white cursor-pointer mx-auto"
+            className="w-full h-10  text-white   cursor-pointer mx-auto"
           >
             Add to cart
           </Button>

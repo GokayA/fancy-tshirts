@@ -8,8 +8,10 @@ interface ProductProps {
 const Products = ({ products }: ProductProps) => {
   return (
     <div className="flex flex-col p-8 lg:p-32 xlg:p-40 w-full h-full ">
-      <div className="">
-        {products.length} Product{products.length === 1 ? '' : 's'}
+      <div className="pl-20 border-b-2 pb-2">
+        <p className="text-lg font-thin">
+          {products.length} Product{products.length === 1 ? '' : 's'}
+        </p>
       </div>
       <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 ">
         {products.map((product) => (

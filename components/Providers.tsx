@@ -1,7 +1,7 @@
 'use client';
 import { FC } from 'react';
 import { CartProvider } from 'use-shopping-cart';
-import { Toaster } from './ui/toaster';
+import { Toaster } from './ui/Toaster';
 
 interface ProvidersProps {
   children: React.ReactNode;
