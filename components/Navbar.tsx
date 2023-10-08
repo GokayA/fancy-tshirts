@@ -10,13 +10,15 @@ import { shimmer, toBase64 } from '@/lib/image';
 import { urlForImage } from '@/sanity/lib/image';
 import { Product } from 'use-shopping-cart/core';
 import { toast } from './ui/use-toast';
+import { Input } from './ui/Input';
 
 interface NavbarProps {}
 
 const Navbar: FC<NavbarProps> = ({}) => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-  const { cartCount, cartDetails, removeItem } = useShoppingCart();
+  const { cartCount, cartDetails, removeItem, setItemQuantity } =
+    useShoppingCart();
   const cartItems = Object.entries(cartDetails!).map(
     ([_, product]: any) => product
   );
@@ -41,10 +43,12 @@ const Navbar: FC<NavbarProps> = ({}) => {
         <div className="flex gap-6">
           {/* <Link href="/login">Link1</Link> */}
           {/* <Link href="/profile">Link2</Link> */}
-          <Button variant="outline" onClick={() => toggleCart()}>
-            <div className="flex justify-center items-center gap-1">
+          <div>
+            <Button variant="outline" onClick={() => toggleCart()}>
               <AiOutlineShoppingCart />
               <p className="">{cartCount}</p>
+            </Button>
+            <div className="flex justify-center items-center gap-1">
               {isOpen &&
                 (cartItems.length === 0 ? (
                   <div className="absolute "></div>
@@ -70,9 +74,25 @@ const Navbar: FC<NavbarProps> = ({}) => {
                             {product.name}
                           </p>
                           <div className=" capitalize flex gap-20  items-center">
-                            <div className="flex gap-1">
-                              <p>{product.product_data?.size}</p>
-                              <p className="">x {product.quantity}</p>
+                            <div className="flex gap-1 items-center">
+                              <p className="text-lg">
+                                {product.product_data?.size} x
+                              </p>
+                              <Input
+                                id={`quantity-${index}`}
+                                name={`quantity-${index}`}
+                                type="number"
+                                className="w-16"
+                                min={1}
+                                max={10}
+                                value={product.quantity}
+                                onChange={(event) =>
+                                  setItemQuantity(
+                                    product._id,
+                                    Number(event.target.value)
+                                  )
+                                }
+                              />
                             </div>
                             <Button
                               variant="outline"
@@ -94,7 +114,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
                   </div>
                 ))}
             </div>
-          </Button>
+          </div>
           {process.env.NODE_ENV === 'development' && (
             <Link href="/studio">Studio</Link>
           )}
