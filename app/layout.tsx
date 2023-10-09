@@ -1,3 +1,5 @@
+import { Analytics } from '@vercel/analytics/react';
+
 import Navbar from '@/components/Navbar';
 import './globals.css';
 import type { Metadata } from 'next';
@@ -21,6 +23,7 @@ export default function RootLayout({
         <Providers>
           <Navbar />
           {children}
+          <Analytics />
         </Providers>
       </body>
     </html>
