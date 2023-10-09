@@ -81,7 +81,7 @@ const CartSummary: FC<CartSummary> = ({}) => {
                 <Button
                   variant="outline"
                   onClick={() => removeCartItem(product)}
-                  className="text-red-500"
+                  className="text-red-500 z-50"
                 >
                   X
                 </Button>
