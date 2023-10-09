@@ -37,7 +37,7 @@ const CartSummary: FC<CartSummary> = ({}) => {
             <div className="flex  text-lg gap-1   justify-center items-center flex-col ">
               <BsFillBagXFill size={42} />
               <p className="font-semibold">No products added</p>
-              <p className="font-thin">Add products to your cart</p>
+              <p className="text-gray-600">Add products to your cart</p>
               <Link href="/">
                 <Button>Add products</Button>
               </Link>

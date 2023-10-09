@@ -27,7 +27,7 @@ const Checkout: FC<CheckoutProps> = ({}) => {
   };
 
   return (
-    <div className="flex flex-col py-20 gap-20 lg:border-4 lg:shadow-inner max-lg:fixed max-lg:-bottom-10 w-full md:fixed lg:w-[30vw]">
+    <div className="flex bg-stone-200 flex-col py-20 gap-20 lg:border-4 lg:shadow-inner max-lg:fixed max-lg:-bottom-10 w-full md:fixed lg:w-[30vw]">
       <div className="">
         <h1 className="text-2xl font-bold hidden lg:block">Order Summary</h1>
       </div>

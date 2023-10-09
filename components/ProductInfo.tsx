@@ -5,12 +5,15 @@ import { FC, useState } from 'react';
 import { formatCurrencyString, useShoppingCart } from 'use-shopping-cart';
 import { Button } from './ui/Button';
 import { useToast } from './ui/use-toast';
+import { useRouter } from 'next/navigation';
+import { ToastAction } from './ui/Toast';
 
 interface ProductInfoProps {
   product: SanityProduct;
 }
 
 const ProductInfo: FC<ProductInfoProps> = ({ product }) => {
+  const router = useRouter();
   const [selectedSize, setSelectedSize] = useState(product.sizes[0]);
   const { addItem, cartDetails, incrementItem, clearCart } = useShoppingCart();
   const { toast } = useToast();
@@ -29,6 +32,15 @@ const ProductInfo: FC<ProductInfoProps> = ({ product }) => {
       title: `${item.name} (${selectedSize})`,
       description: `Product added to cart`,
       variant: 'default',
+      action: (
+        <ToastAction
+          className="bg-slate-200"
+          onClick={() => router.push('/cart')}
+          altText="Go to cart"
+        >
+          Go to cart
+        </ToastAction>
+      ),
     });
   };
 
