@@ -27,15 +27,15 @@ const Checkout: FC<CheckoutProps> = ({}) => {
   };
 
   return (
-    <div className="flex  flex-col py-20 gap-20 border-4 shadow-inner">
+    <div className="flex flex-col py-20 gap-20 lg:border-4 lg:shadow-inner max-lg:fixed max-lg:-bottom-10 w-full md:fixed lg:w-[30vw]">
       <div className="">
-        <h1 className="text-2xl font-bold">Order Summary</h1>
-      </div>
-      <div className="flex text-xl font-semibold border-b-4 pt-2 justify-between items-center">
-        <p>Order total: </p>
-        <p className="">{formattedTotalPrice}</p>
+        <h1 className="text-2xl font-bold hidden lg:block">Order Summary</h1>
       </div>
       <div>
+        <div className="flex bg-stone-200 text-xl font-semibold border-b-4 pt-2  items-center">
+          <p>Order total: </p>
+          <p className="px-20 md:px-2">{formattedTotalPrice}</p>
+        </div>
         <Button onClick={onCheckout} className="w-full" disabled={isDisabled}>
           {isLoading && <Loader2 className="animate-spin" />}
           {isLoading ? 'Loading' : 'Checkout'}

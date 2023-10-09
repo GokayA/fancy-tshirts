@@ -16,7 +16,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
       <div className="flex items-center p-10 gap-2 ">
         <div className="flex flex-col gap-3" key={product._id}>
           <p className="text-3xl text-center capitalize">{product.name}</p>
-          <div className="relative w-60 h-60 ">
+          <div className="relative w-96 h-96 ">
             <Image
               placeholder="blur"
               blurDataURL={`data:image/svg+xml;base64,${toBase64(
@@ -25,7 +25,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
               src={urlForImage(product.images[0]).url()}
               alt={product.name}
               fill
-              className="object-contain bg-white"
+              className="object-contain"
               sizes="300"
             />
           </div>

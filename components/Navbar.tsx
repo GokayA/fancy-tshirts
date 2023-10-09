@@ -48,9 +48,6 @@ const Navbar: FC<NavbarProps> = ({}) => {
             <div className="flex justify-center items-center gap-1">
               {isOpen &&
                 (cartCount === 0 ? null : (
-                  // <div className="absolute flex justify-center items-center top-20 z-50 w-40 h-40 right-10 bg-white border border-gray-300 p-4 rounded shadow-lg ">
-                  //   <p className="text-xl">Empty</p>
-                  // </div>
                   <div className="absolute flex justify-center flex-col top-20 z-50 min-h-min right-10 bg-white border border-gray-300 p-4 rounded shadow-lg">
                     {/* shopping basket summary */}
                     <ShopingCartSummary />

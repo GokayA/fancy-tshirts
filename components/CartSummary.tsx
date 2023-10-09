@@ -47,7 +47,7 @@ const CartSummary: FC<CartSummary> = ({}) => {
       ) : (
         cartItems.map((product, index) => (
           <li key={product._id} className="max-h-[40vh] flex pb-2">
-            <div className="relative w-60 h-40 ">
+            <div className="relative w-96 h-96">
               <Image
                 placeholder="blur"
                 blurDataURL={`data:image/svg+xml;base64,${toBase64(
@@ -62,8 +62,8 @@ const CartSummary: FC<CartSummary> = ({}) => {
             </div>
             <div className="flex flex-col  ">
               <p className="text-xl font-bold capitalize">{product.name}</p>
-              <div className=" capitalize flex gap-20  items-center">
-                <div className="flex gap-1 items-center">
+              <div className=" capitalize flex sm:flex-row flex-col gap-20  items-center">
+                <div className="flex sm:flex-row flex-col gap-1 items-center">
                   <p className="text-lg">{product.product_data?.size} x</p>
                   <Input
                     id={`quantity-${index}`}
