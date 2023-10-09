@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { FC, useState } from 'react';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { Button } from './ui/Button';
@@ -11,6 +11,7 @@ import ShopingCartSummary from './ShopingCart';
 interface NavbarProps {}
 
 const Navbar: FC<NavbarProps> = ({}) => {
+  const router = useRouter();
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const { cartCount } = useShoppingCart();
@@ -40,8 +41,8 @@ const Navbar: FC<NavbarProps> = ({}) => {
                   <div className="absolute flex justify-center flex-col top-20 z-50 min-h-min right-10 bg-white border border-gray-300 p-4 rounded shadow-lg">
                     {/* shopping basket summary */}
                     <ShopingCartSummary />
-                    <Button className="">
-                      <Link href="/cart">Checkout</Link>
+                    <Button onClick={() => router.push('/cart')}>
+                      Checkout
                     </Button>
                   </div>
                 ))}

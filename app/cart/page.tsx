@@ -10,11 +10,11 @@ const page: FC<pageProps> = ({}) => {
       <h1 className="text-3x pb-20 font-bold tracking-tight sm:text-4xl">
         Shopping cart
       </h1>
-      <div className="flex sm:flex-row flex-col w-full h-full gap-2">
-        <div className=" h-full">
+      <div className="flex lg:flex-row flex-col w-full h-full gap-2">
+        <div className="w-full h-full">
           <CartSummary />
         </div>
-        <div className=" h-full">
+        <div className="w-full h-full">
           <Checkout />
         </div>
       </div>
