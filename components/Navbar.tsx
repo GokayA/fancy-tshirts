@@ -1,28 +1,41 @@
 'use client';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { FC, useState } from 'react';
+import { FC, useRef, useState } from 'react';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { Button } from './ui/Button';
 import { useShoppingCart } from 'use-shopping-cart';
 
 import ShopingCartSummary from './ShopingCart';
+import { useOnClickOutside } from '@/hooks/use-on-click-outside';
 
 interface NavbarProps {}
 
 const Navbar: FC<NavbarProps> = ({}) => {
+  const navbarRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const { cartCount } = useShoppingCart();
 
+  useOnClickOutside(navbarRef, () => {
+    setIsOpen(false);
+  });
+
   const toggleCart = () => {
     setIsOpen(!isOpen);
   };
+  const handleCheckout = () => {
+    router.push('/cart');
+    setIsOpen(false);
+  };
+
   if (pathname.startsWith('/studio')) return null;
   return (
-    <div className=" flex justify-between p-10">
-      <Link href="/">Home</Link>
+    <div ref={navbarRef} className=" flex justify-between p-10">
+      <Link onClick={() => setIsOpen(false)} href="/">
+        Home
+      </Link>
       <div>
         <div className="flex gap-6">
           {/* <Link href="/login">Link1</Link> */}
@@ -41,9 +54,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
                   <div className="absolute flex justify-center flex-col top-20 z-50 min-h-min right-10 bg-white border border-gray-300 p-4 rounded shadow-lg">
                     {/* shopping basket summary */}
                     <ShopingCartSummary />
-                    <Button onClick={() => router.push('/cart')}>
-                      Checkout
-                    </Button>
+                    <Button onClick={handleCheckout}>Checkout</Button>
                   </div>
                 ))}
             </div>
