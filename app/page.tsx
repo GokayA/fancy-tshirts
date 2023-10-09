@@ -3,7 +3,7 @@ import { SanityProduct } from '@/lib/SanityProductType/product-type';
 import { client } from '@/sanity/lib/client';
 import { groq } from 'next-sanity';
 
-export const revalidate = 60;
+export const revalidate = 10800;
 
 export default async function Home() {
   const products = await client.fetch<
