@@ -8,6 +8,7 @@ import { useShoppingCart } from 'use-shopping-cart';
 
 import ShopingCartSummary from './ShopingCart';
 import { useOnClickOutside } from '@/hooks/use-on-click-outside';
+import Image from 'next/image';
 
 interface NavbarProps {}
 
@@ -34,14 +35,18 @@ const Navbar: FC<NavbarProps> = ({}) => {
   return (
     <div ref={navbarRef} className=" flex justify-between p-10">
       <Link onClick={() => setIsOpen(false)} href="/">
-        Home
+        <Image width={60} height={60} alt="logo" src="/logo.png" />
       </Link>
       <div>
         <div className="flex gap-6">
           {/* <Link href="/login">Link1</Link> */}
           {/* <Link href="/profile">Link2</Link> */}
           <div>
-            <Button variant="outline" onClick={() => toggleCart()}>
+            <Button
+              variant="outline"
+              className="bg-transparent hover:bg-slate-300 hover:scale-110"
+              onClick={() => toggleCart()}
+            >
               <AiOutlineShoppingCart />
               <p className="">{cartCount}</p>
             </Button>
