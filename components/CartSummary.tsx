@@ -34,7 +34,7 @@ const CartSummary: FC<CartSummary> = ({}) => {
       {cartItems.length === 0 ? (
         <div className="flex justify-center items-center min-w-[10vw] min-h-[45vh]">
           <div>
-            <div className="flex  text-lg gap-1   justify-center items-center flex-col ">
+            <div className="flex  text-lg gap-1 justify-center items-center flex-col ">
               <BsFillBagXFill size={42} />
               <p className="font-semibold">No products added</p>
               <p className="text-gray-600">Add products to your cart</p>
@@ -56,11 +56,11 @@ const CartSummary: FC<CartSummary> = ({}) => {
                 src={urlForImage(product.images[0]).url()}
                 alt={product.name}
                 fill
-                className="object-contain  "
+                className="object-contain"
                 sizes="255"
               />
             </div>
-            <div className="flex flex-col  ">
+            <div className="flex flex-col">
               <p className="text-xl font-bold capitalize">{product.name}</p>
               <div className=" capitalize flex sm:flex-row flex-col gap-20  items-center">
                 <div className="flex sm:flex-row flex-col gap-1 items-center">
