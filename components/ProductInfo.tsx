@@ -48,7 +48,7 @@ const ProductInfo: FC<ProductInfoProps> = ({ product }) => {
     <div className="flex ">
       <div className="flex flex-col jusify-center gap-4">
         <div className="pb-4">
-          <h1 className="pb-4 w-full text-4xl">{product.name}</h1>
+          <h1 className="pb-4 w-full text-4xl capitalize">{product.name}</h1>
           <p className="text-2xl font-bold">
             {formatCurrencyString({
               value: product.price,
