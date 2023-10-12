@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { FC, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { Button } from './ui/Button';
 import { useShoppingCart } from 'use-shopping-cart';
@@ -10,9 +10,7 @@ import ShopingCartSummary from './ShopingCart';
 import { useOnClickOutside } from '@/hooks/use-on-click-outside';
 import Image from 'next/image';
 
-interface NavbarProps {}
-
-const Navbar: FC<NavbarProps> = ({}) => {
+const Navbar = () => {
   const navbarRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
   const pathname = usePathname();

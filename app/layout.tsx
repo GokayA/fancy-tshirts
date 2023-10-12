@@ -5,6 +5,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Lato } from 'next/font/google';
 import Providers from '@/components/Providers';
+
 const inter = Lato({ subsets: ['latin'], weight: '400' });
 
 export const metadata: Metadata = {

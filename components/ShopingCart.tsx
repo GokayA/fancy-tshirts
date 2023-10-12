@@ -1,5 +1,4 @@
 'use client';
-import { FC } from 'react';
 import { formatCurrencyString, useShoppingCart } from 'use-shopping-cart';
 import { Button } from './ui/Button';
 import Image from 'next/image';
@@ -9,11 +8,8 @@ import { toast } from './ui/use-toast';
 import { Product } from 'use-shopping-cart/core';
 import { Input } from './ui/Input';
 
-interface ShopingCart {}
-
-const ShopingCart: FC<ShopingCart> = ({}) => {
-  const { cartCount, cartDetails, removeItem, setItemQuantity } =
-    useShoppingCart();
+const ShopingCart = () => {
+  const { cartDetails, removeItem, setItemQuantity } = useShoppingCart();
   const cartItems = Object.entries(cartDetails!).map(
     ([_, product]: any) => product
   );

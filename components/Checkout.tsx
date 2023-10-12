@@ -1,12 +1,10 @@
 'use client';
-import { FC, useState } from 'react';
+import { useState } from 'react';
 import { useShoppingCart } from 'use-shopping-cart';
 import { Button } from './ui/Button';
 import { Loader2 } from 'lucide-react';
 
-interface CheckoutProps {}
-
-const Checkout: FC<CheckoutProps> = ({}) => {
+const Checkout = () => {
   const { formattedTotalPrice, cartCount, cartDetails, redirectToCheckout } =
     useShoppingCart();
   const [isLoading, setIsLoading] = useState(false);

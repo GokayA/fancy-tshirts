@@ -1,5 +1,4 @@
 'use client';
-import { FC } from 'react';
 import { formatCurrencyString, useShoppingCart } from 'use-shopping-cart';
 import { Button } from './ui/Button';
 import Image from 'next/image';
@@ -11,9 +10,7 @@ import { Input } from './ui/Input';
 import { BsFillBagXFill } from 'react-icons/bs';
 import Link from 'next/link';
 
-interface CartSummary {}
-
-const CartSummary: FC<CartSummary> = ({}) => {
+const CartSummary = () => {
   const { cartCount, cartDetails, removeItem, setItemQuantity } =
     useShoppingCart();
   const cartItems = Object.entries(cartDetails!).map(
