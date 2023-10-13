@@ -30,8 +30,8 @@ const Checkout = () => {
         <h1 className="text-2xl font-bold hidden lg:block">Order Summary</h1>
       </div>
       <div>
-        <div className="flex bg-stone-200 text-xl font-semibold border-b-4 pt-2  items-center">
-          <p>Order total: </p>
+        <div className="max-w-2xl w-full flex bg-stone-200 text-xl font-semibold border-b-4 pt-2  items-center">
+          <p className="">Order total: </p>
           <p className="px-20 md:px-2">{formattedTotalPrice}</p>
         </div>
         <Button
