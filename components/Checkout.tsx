@@ -34,7 +34,11 @@ const Checkout = () => {
           <p>Order total: </p>
           <p className="px-20 md:px-2">{formattedTotalPrice}</p>
         </div>
-        <Button onClick={onCheckout} className="w-full" disabled={isDisabled}>
+        <Button
+          onClick={onCheckout}
+          className="w-full max-w-2xl"
+          disabled={isDisabled}
+        >
           {isLoading && <Loader2 className="animate-spin" />}
           {isLoading ? 'Loading' : 'Checkout'}
         </Button>

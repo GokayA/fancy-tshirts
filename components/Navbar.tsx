@@ -2,13 +2,13 @@
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useRef, useState } from 'react';
-import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { Button } from './ui/Button';
 import { useShoppingCart } from 'use-shopping-cart';
 
 import ShopingCartSummary from './ShopingCart';
 import { useOnClickOutside } from '@/hooks/use-on-click-outside';
 import Image from 'next/image';
+import { ShoppingBag } from 'lucide-react';
 
 const Navbar = () => {
   const navbarRef = useRef<HTMLDivElement>(null);
@@ -45,7 +45,7 @@ const Navbar = () => {
               className="bg-transparent hover:bg-slate-300 hover:scale-110"
               onClick={() => toggleCart()}
             >
-              <AiOutlineShoppingCart />
+              <ShoppingBag size={22} />
               <p className="">{cartCount}</p>
             </Button>
             <div className="flex justify-center items-center gap-1">

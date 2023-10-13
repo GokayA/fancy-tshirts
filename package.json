@@ -24,7 +24,6 @@
     "next-sanity": "^5.5.4",
     "react": "latest",
     "react-dom": "latest",
-    "react-icons": "^4.11.0",
     "sanity": "^3.17.0",
     "stripe": "^13.9.0",
     "styled-components": "5.2",

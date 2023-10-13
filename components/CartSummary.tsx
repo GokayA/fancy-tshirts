@@ -7,8 +7,8 @@ import { urlForImage } from '@/sanity/lib/image';
 import { toast } from './ui/use-toast';
 import { Product } from 'use-shopping-cart/core';
 import { Input } from './ui/Input';
-import { BsFillBagXFill } from 'react-icons/bs';
 import Link from 'next/link';
+import { ShoppingBag } from 'lucide-react';
 
 const CartSummary = () => {
   const { cartCount, cartDetails, removeItem, setItemQuantity } =
@@ -31,8 +31,8 @@ const CartSummary = () => {
       {cartItems.length === 0 ? (
         <div className="flex justify-center items-center min-w-[10vw] min-h-[45vh]">
           <div>
-            <div className="flex  text-lg gap-1 justify-center items-center flex-col ">
-              <BsFillBagXFill size={42} />
+            <div className="flex text-lg gap-1 justify-center items-center flex-col ">
+              <ShoppingBag size={42} />
               <p className="font-semibold">No products added</p>
               <p className="text-gray-600">Add products to your cart</p>
               <Link href="/">

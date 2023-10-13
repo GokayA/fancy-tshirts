@@ -2,9 +2,9 @@
 import { useEffect, FC } from 'react';
 import Stripe from 'stripe';
 import { Button } from './ui/Button';
-import { IoMdDoneAll } from 'react-icons/io';
 import { useRouter } from 'next/navigation';
 import { useShoppingCart } from 'use-shopping-cart';
+import { CheckCheck } from 'lucide-react';
 
 interface CheckoutSessionProps {
   customerDetails: Stripe.Checkout.Session.CustomerDetails | null;
@@ -30,7 +30,7 @@ const CheckoutSession: FC<CheckoutSessionProps> = ({ customerDetails }) => {
   return (
     <div>
       <div className="flex gap-4 flex-col justify-center items-center p-40">
-        <IoMdDoneAll size={80} className="text-green-600" />
+        <CheckCheck size={80} className="text-green-600" />
         <p className="text-green-600 text-4xl">Order Successful!</p>
         <p className="text-2xl">Thank you, {customerDetails.name}</p>
         <p className="text-xl text-gray-600">
