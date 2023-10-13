@@ -1,10 +1,11 @@
 'use client';
-import { useEffect, FC } from 'react';
-import Stripe from 'stripe';
-import { Button } from './ui/Button';
-import { useRouter } from 'next/navigation';
-import { useShoppingCart } from 'use-shopping-cart';
 import { CheckCheck } from 'lucide-react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { FC, useEffect } from 'react';
+import Stripe from 'stripe';
+import { useShoppingCart } from 'use-shopping-cart';
+import { buttonVariants } from './ui/Button';
 
 interface CheckoutSessionProps {
   customerDetails: Stripe.Checkout.Session.CustomerDetails | null;
@@ -38,7 +39,9 @@ const CheckoutSession: FC<CheckoutSessionProps> = ({ customerDetails }) => {
           <span className="text-blue-600">{customerDetails.email}</span> for
           your invoice
         </p>
-        <Button onClick={() => router.push('/')}>Go back to home page</Button>
+        <Link className={buttonVariants()} href="/">
+          Go back to home page
+        </Link>
       </div>
     </div>
   );

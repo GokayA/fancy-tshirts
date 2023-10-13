@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useRef, useState } from 'react';
-import { Button } from './ui/Button';
+import { Button, buttonVariants } from './ui/Button';
 import { useShoppingCart } from 'use-shopping-cart';
 
 import ShopingCartSummary from './ShopingCart';
@@ -60,7 +60,9 @@ const Navbar = () => {
             </div>
           </div>
           {process.env.NODE_ENV === 'development' && (
-            <Link href="/studio">Studio</Link>
+            <Link className={buttonVariants()} href="/studio">
+              Studio
+            </Link>
           )}
         </div>
       </div>
