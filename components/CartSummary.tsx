@@ -1,6 +1,6 @@
 'use client';
 import { formatCurrencyString, useShoppingCart } from 'use-shopping-cart';
-import { Button } from './ui/Button';
+import { Button, buttonVariants } from './ui/Button';
 import Image from 'next/image';
 import { shimmer, toBase64 } from '@/lib/image';
 import { urlForImage } from '@/sanity/lib/image';
@@ -35,8 +35,8 @@ const CartSummary = () => {
               <ShoppingBag size={42} />
               <p className="font-semibold">No products added</p>
               <p className="text-gray-600">Add products to your cart</p>
-              <Link href="/">
-                <Button>Add products</Button>
+              <Link className={buttonVariants()} href="/">
+                Add products
               </Link>
             </div>
           </div>

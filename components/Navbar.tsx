@@ -54,7 +54,7 @@ const Navbar = () => {
                   <div className="absolute flex justify-center flex-col top-20 z-50 min-h-min right-10 bg-white border border-gray-300 p-4 rounded shadow-lg">
                     {/* shopping basket summary */}
                     <ShopingCartSummary />
-                    <Button onClick={handleCheckout}>Checkout</Button>
+                    <Button onClick={handleCheckout}>Your Cart</Button>
                   </div>
                 ))}
             </div>
