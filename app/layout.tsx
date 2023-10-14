@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
 import { Lato } from 'next/font/google';
 import Providers from '@/components/Providers';
 
-const inter = Lato({ subsets: ['latin'], weight: '300' });
+const inter = Lato({ subsets: ['latin'], weight: '400' });
 
 export const metadata: Metadata = {
   title: 'Fancy Tshirts',

@@ -53,7 +53,7 @@ const CartSummary = () => {
                 src={urlForImage(product.images[0]).url()}
                 alt={product.name}
                 fill
-                className="object-contain"
+                className="object-contain p-2"
                 sizes="255"
               />
             </div>
