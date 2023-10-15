@@ -26,7 +26,7 @@ const Checkout = () => {
 
   return (
     <div className="flex lg:bg-stone-200 flex-col py-20 gap-20 lg:border-4 max-lg:fixed max-lg:-bottom-10 w-full md:fixed lg:w-[30vw]">
-      <div className="">
+      <div>
         <h1 className="text-2xl font-bold hidden lg:block">Order Summary</h1>
       </div>
       <div>

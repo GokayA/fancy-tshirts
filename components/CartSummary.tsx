@@ -11,8 +11,7 @@ import Link from 'next/link';
 import { ShoppingBag } from 'lucide-react';
 
 const CartSummary = () => {
-  const { cartCount, cartDetails, removeItem, setItemQuantity } =
-    useShoppingCart();
+  const { cartDetails, removeItem, setItemQuantity } = useShoppingCart();
   const cartItems = Object.entries(cartDetails!).map(
     ([_, product]: any) => product
   );

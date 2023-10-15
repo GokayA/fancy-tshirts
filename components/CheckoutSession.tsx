@@ -1,7 +1,6 @@
 'use client';
 import { CheckCheck } from 'lucide-react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { FC, useEffect } from 'react';
 import Stripe from 'stripe';
 import { useShoppingCart } from 'use-shopping-cart';
@@ -13,7 +12,6 @@ interface CheckoutSessionProps {
 
 const CheckoutSession: FC<CheckoutSessionProps> = ({ customerDetails }) => {
   const { clearCart } = useShoppingCart();
-  const router = useRouter();
 
   useEffect(() => {
     if (customerDetails) {

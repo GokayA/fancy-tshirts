@@ -1,6 +1,5 @@
 'use client';
 import { SanityProduct } from '@/lib/SanityProductType/product-type';
-
 import { FC, useState } from 'react';
 import { formatCurrencyString, useShoppingCart } from 'use-shopping-cart';
 import { Button } from './ui/Button';
