@@ -20,8 +20,6 @@ export async function POST(request:Request){
     "slug":slug.current
   }`);
   const cartDetails = await request.json()
-  console.log(">>>",inventory)
-  console.log("2222",cartDetails)
     const lineItems = validateCartItems(inventory,cartDetails)
     const origin = request.headers.get('origin')
     const session = await stripe.checkout.sessions.create({

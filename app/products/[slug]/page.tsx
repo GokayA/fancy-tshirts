@@ -29,8 +29,6 @@ const page: FC<pageProps> = async ({ params }) => {
     }`
   );
 
-  console.log(product.images[0]);
-
   return (
     <div className="flex sm:flex-row px-4 overflow-hidden flex-col md:px-12 lg:px-40  py-20 gap-20">
       <ProductImage product={product} />
