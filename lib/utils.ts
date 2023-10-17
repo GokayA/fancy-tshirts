@@ -40,7 +40,7 @@ noIndex = false
       creator:"@Olurrolurrr"
     },
     icons,
-    metadataBase:new URL('https://gokayakkus.vercel.app'),
+    metadataBase:new URL('https://fancy-tshirts.vercel.app'),
     themeColor:'#FFF',
     ...(noIndex && {
       robots:{
