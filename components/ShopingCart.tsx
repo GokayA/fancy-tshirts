@@ -36,13 +36,13 @@ const ShopingCart = () => {
               src={urlForImage(product.images[0]).url()}
               alt={product.name}
               fill
-              className="object-contain  "
+              className="object-contain"
               sizes="100"
             />
           </div>
-          <div className="flex flex-col  ">
+          <div className="flex flex-col">
             <p className="text-xl font-bold capitalize">{product.name}</p>
-            <div className=" capitalize flex gap-20  items-center">
+            <div className="capitalize flex gap-20 items-center">
               <div className="flex gap-1 items-center">
                 <p className="text-lg">{product.product_data?.size} x</p>
                 <Input

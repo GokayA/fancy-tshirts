@@ -7,7 +7,7 @@ interface ProductProps {
 
 const Products = ({ products }: ProductProps) => {
   return (
-    <div className="flex flex-col p-8 lg:p-12 w-full h-full ">
+    <div className="flex flex-col p-8 lg:p-12 w-full h-full">
       <div className="pl-20 border-b-2 pb-2">
         <p className="text-lg text-gray-500">
           {products.length} Product{products.length === 1 ? '' : 's'}

@@ -13,7 +13,7 @@ interface ProductCardProps {
 const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <Link href={`/products/${product.slug}`}>
-      <div className="flex items-center p-10 gap-2 ">
+      <div className="flex items-center p-10 gap-2">
         <div className="flex flex-col gap-3" key={product._id}>
           <p className="text-3xl text-center capitalize">{product.name}</p>
           <div className="relative w-96 h-96  ">

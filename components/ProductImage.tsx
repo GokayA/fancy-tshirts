@@ -12,7 +12,7 @@ const ProductImage: FC<ProductImageProps> = ({ product }) => {
     <div className="relative w-96 h-96">
       <Image
         src={urlForImage(product.images[0]).url()}
-        className="object-contain "
+        className="object-contain"
         fill
         alt={product.name}
       />

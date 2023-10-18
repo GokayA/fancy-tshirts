@@ -44,7 +44,7 @@ const ProductInfo: FC<ProductInfoProps> = ({ product }) => {
   };
 
   return (
-    <div className="flex ">
+    <div className="flex">
       <div className="flex flex-col jusify-center gap-4">
         <div className="pb-4">
           <h1 className="pb-4 w-full text-4xl capitalize">{product.name}</h1>
@@ -57,7 +57,7 @@ const ProductInfo: FC<ProductInfoProps> = ({ product }) => {
         </div>
         <div className="flex gap-1">
           <p className="capitalize">Size:</p>
-          <p className="capitalize  font-bold">{selectedSize}</p>
+          <p className="capitalize font-bold">{selectedSize}</p>
         </div>
         <p>{product.description}</p>
         <div className="flex gap-2">
@@ -66,7 +66,7 @@ const ProductInfo: FC<ProductInfoProps> = ({ product }) => {
               key={size}
               variant={selectedSize === size ? 'default' : 'outline'}
               onClick={() => setSelectedSize(size)}
-              className="p-2 cursor-pointer  border-[1px] capitalize border-blue-500"
+              className="p-2 cursor-pointer border-[1px] capitalize border-blue-500"
             >
               {size}
             </Button>
@@ -77,7 +77,7 @@ const ProductInfo: FC<ProductInfoProps> = ({ product }) => {
           <Button
             variant="default"
             onClick={() => addToCart()}
-            className="w-full h-10  text-white   cursor-pointer mx-auto"
+            className="w-full h-10 text-white cursor-pointer mx-auto"
           >
             Add to cart
           </Button>

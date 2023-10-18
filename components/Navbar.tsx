@@ -44,7 +44,7 @@ const Navbar = () => {
               onClick={() => toggleCart()}
             >
               <ShoppingBag size={22} />
-              <p className="">{cartCount}</p>
+              <p>{cartCount}</p>
             </Button>
             <div className="flex justify-center items-center gap-1">
               {isOpen &&
