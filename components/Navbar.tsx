@@ -43,7 +43,7 @@ const Navbar = () => {
               className="bg-transparent hover:bg-slate-300 hover:scale-110"
               onClick={() => toggleCart()}
             >
-              <ShoppingBag size={22} />
+              <ShoppingBag size={22} arial-label="shopping-bag" />
               <p>{cartCount}</p>
             </Button>
             <div className="flex justify-center items-center gap-1">
@@ -51,7 +51,7 @@ const Navbar = () => {
                 (cartCount === 0 ? null : (
                   <div className="absolute flex justify-center flex-col top-20 z-50 min-h-min right-10 bg-white border border-gray-300 p-4 rounded shadow-lg">
                     {/* shopping basket summary */}
-                    <ShopingCartSummary />
+                    <ShopingCartSummary arial-label="cart-summary" />
                     <Button onClick={handleCheckout}>Your Cart</Button>
                   </div>
                 ))}

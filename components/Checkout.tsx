@@ -39,7 +39,9 @@ const Checkout = () => {
           className="w-full max-w-2xl"
           disabled={isDisabled}
         >
-          {isLoading && <Loader2 className="animate-spin" />}
+          {isLoading && (
+            <Loader2 aria-label="loading-icon" className="animate-spin" />
+          )}
           {isLoading ? 'Loading' : 'Checkout'}
         </Button>
       </div>
